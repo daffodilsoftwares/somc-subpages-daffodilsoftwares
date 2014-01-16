@@ -1,72 +1,5 @@
 /* This stylesheet is used to style the public view of the widget. */
-h1 {
-    display: block;
-    margin: 0 0 6px 0;
-    font-size: 26px;
-    color: rgba(138,152,182,1);
-    text-decoration: none;
-}
-    h1:hover { color: rgba(138,152,182,0.7); }
-a { font-size: 18px; color: rgba(138,152,182,1); text-decoration: none; }
-    a:hover { text-decoration: none; }
 
-ul { list-style: none; margin-top: 20px; }
-
-/* -- Buttons -- */
-.buttons {
-    background-image: -moz-linear-gradient(33% 0 -90deg, #FAFAFA 0%, #E1E1E1 99%, #E1E1E1 100%);
-    border: 1px solid #AAAAAA;
-    border-radius: 4px 4px 4px 4px;
-    color: #594C3F;
-    font-family: 'Dosis',sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin: 3px;
-    padding: 7px 12px;
-    text-shadow: 0 1px 0 #FFFFFF;
-    width: 50px;
-}
-i {
-    border-right: 1px solid rgba(170, 170, 170, 0.5);
-    box-shadow: 1px 0 0 #FFFFFF;
-    font-size: 115%;
-    height: 90%;
-    margin-right: 8px;
-    padding-right: 8px;
-}
-[class^="icon-"]:before, [class*=" icon-"]:before {
-    display: inline-block;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-}
-a [class^="icon-"], a [class*=" icon-"] {
-    display: inline-block;
-    text-decoration: inherit;
-}
-.buttons [class^="icon-"], .buttons [class*=" icon-"] {
-    line-height: 0.9em;
-}
-.icon-asc:before { content: "↟"; }
-.icon-desc:before { content: "↡"; }
-
-/* -- FOOTER -- */
-#footer { margin-top: 40px; clear:both; }
-    #footer p {
-        text-align: center;
-        font-size: 16px;
-    }
-    #footer a, #footer a:visited {
-        color: rgba(138,152,182,1);
-        text-decoration: none;
-        font-weight: bold;        
-        outline: none;
-    }
-        #footer a:hover { color: rgba(138,152,182,0.8); text-decoration: none; }
-        
-        
-        /*Css*/
 #side {
 	font-size:15px;
 	font-family:helvetica;
@@ -125,6 +58,7 @@ a.trigger.open {
 a.title-thumb img {
 	vertical-align: middle;
 	margin-right: 10px;
+	border-radius:2px;
 }
 .accordion li:last-child {
 	border-bottom: none;
@@ -153,6 +87,34 @@ a.decending {
 .accordion ul ul li {
 	background:url(../images/border.png) repeat-y 38px center #767676;
 }
-.accordion ul ul li a.trigger.open{ 
+.accordion li.chk a.trigger.open{ 
 	background: url(../images/arrow_right.png) no-repeat 9px center;
 }
+.accordion li.chk a.trigger{ 
+	cursor:auto;
+}
+
+/* --- Sorting --- */
+#side .sortby { 
+	background-color:#282828; 
+	padding:6px 13px;
+}
+#side .sortby span { 
+	color:#D1D1D1; 
+}
+#side .sortby .asc { 
+	width:20px; 
+	height:16px;  
+	background:url(../images/asc_order.png) no-repeat; 
+	float:right; 
+	margin-top:4px;
+}
+#side .sortby .desc { 
+	width:20px; 
+	height:16px; 
+	background:url(../images/desc_order.png) no-repeat; 
+	float:right; 
+	margin-top:3px; 
+	display:none;
+}
+

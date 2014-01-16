@@ -90,8 +90,8 @@ class wp_my_plugin extends WP_Widget
            
             // Traverse the children of the current page.
             foreach ($children as $child) {
-                $image_width = '33';
-                $image = wp_get_attachment_image_src(get_post_thumbnail_id($child->ID), array(33, 39)); // get featured img; 'large'
+                $image_width = '28';
+                $image = wp_get_attachment_image_src(get_post_thumbnail_id($child->ID), array(28, 28)); // get featured img; 'large'
                 $img_url = $image[0]; // get the src of the featured image
                 $menu .= '<li><a href="#" class="arrow_trigger"></a><a href="' . get_permalink($child) . '" class="title-thumb">';
          
@@ -169,11 +169,13 @@ class wp_my_plugin extends WP_Widget
 	if (count(get_pages("child_of=" . $post->ID)) > 0) {
             echo '<div class="widget-text wp_widget_plugin_box">';
             echo '<div id="side">';
-            echo "<a href='#' class='buttons link-sort-list asc'><i class='icon-asc'></i>Desc</a>";
-            echo "<a href='#' class='buttons link-sort-list desc'><i class='icon-desc'></i>Asc</a>";
-       
+	    echo '<div class="sortby">';
+            echo '<span>Sort By:</span>';
+            echo "<a href='#' class='buttons link-sort-list desc'></a>";
+            echo "<a href='#' class='buttons link-sort-list asc'></a>";            
+            echo '</div>';
             echo $this->listSubmenuByHierarchy();
-      
+     
             echo '</div>';
             echo '</div>';
 	}
